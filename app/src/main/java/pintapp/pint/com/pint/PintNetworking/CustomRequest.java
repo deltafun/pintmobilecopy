@@ -30,7 +30,7 @@ public class CustomRequest<T> extends Request<T> {
     }
 
     @Override
-    protected Response parseNetworkResponse(NetworkResponse response) {
+    public Response parseNetworkResponse(NetworkResponse response) {
         Map<String, String> responseHeaders = response.headers;
 
         try {

@@ -2,6 +2,7 @@ package pintapp.pint.com.pint.PintNetworking;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,7 +26,7 @@ public class DefaultTokenProvider implements ITokenProvider {
     public RequestQueue requestQueue;
 
     public DefaultTokenProvider(Context context) {
-        requestQueue = Volley.newRequestQueue(context);
+    //    requestQueue = Volley.newRequestQueue(context);
     }
 
     @Override
