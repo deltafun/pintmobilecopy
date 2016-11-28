@@ -21,7 +21,7 @@ buildscript {
 }
 
 apply plugin: 'eclipse'
-apply plugin: 'idea' 
+apply plugin: 'idea'
 apply plugin: 'java'
 
 allprojects {
@@ -33,4 +33,3 @@ allprojects {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.10'
 }
-

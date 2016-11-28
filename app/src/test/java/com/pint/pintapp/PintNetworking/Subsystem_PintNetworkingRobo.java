@@ -27,7 +27,7 @@ import pintapp.pint.com.pint.PintNetworking.CustomRequest;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = Build.VERSION_CODES.LOLLIPOP)
-public class Subsystem_PintNetworkingRobo {
+public abstract class Subsystem_PintNetworkingRobo {
 
     protected CustomRequest customRequest;
 

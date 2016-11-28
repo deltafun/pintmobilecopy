@@ -11,7 +11,6 @@ import com.android.volley.Response;
 import com.android.volley.ResponseDelivery;
 import com.android.volley.toolbox.Volley;
 import com.android.volley.utils.ImmediateResponseDelivery;
-import com.pint.pintapp.PintNetworking.mock.MockActivity;
 
 import junit.framework.Assert;
 
