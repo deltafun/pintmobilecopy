@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 
+import android.os.Build;
+import android.test.mock.MockContext;
 import com.android.volley.Network;
 import com.android.volley.NetworkResponse;
 import com.android.volley.RequestQueue;
@@ -31,6 +33,11 @@ import org.mockito.Mock;
 
 import java.util.Map;
 
+import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
+import pintapp.pint.com.pint.BuildConfig;
+import pintapp.pint.com.pint.LoginActivity;
 import pintapp.pint.com.pint.PintNetworking.CustomRequest;
 import pintapp.pint.com.pint.PintNetworking.DefaultPintAPI;
 import pintapp.pint.com.pint.PintNetworking.DefaultTokenProvider;
@@ -42,7 +49,8 @@ import pintapp.pint.com.pint.R;
 
 import static org.mockito.MockitoAnnotations.initMocks;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(RobolectricTestRunner.class)
+@Config(constants = BuildConfig.class, sdk = Build.VERSION_CODES.LOLLIPOP)
 public class Subsystem_PintNetworkingTest {
 
     JSONAdapter jsonAdapter = Mockito.mock(JSONAdapter.class);
@@ -56,13 +64,18 @@ public class Subsystem_PintNetworkingTest {
     @InjectMocks
     protected DefaultPintAPI defaultPintpAPI = new DefaultPintAPI();
 
-    protected DefaultTokenProvider defaultTokenProvider = new DefaultTokenProvider(null);
+    LoginActivity loginActivity;
+
+    protected DefaultTokenProvider defaultTokenProvider;
 
     protected UserNotificationComparator userNotificationComparator = new UserNotificationComparator();
 
     protected CustomRequest customRequest;
     @Before
     public void setUp() {
+        loginActivity = Robolectric.setupActivity(LoginActivity.class);
+        defaultTokenProvider =
+                new DefaultTokenProvider(loginActivity.getBaseContext());
     }
 
     //--------------DEFAULT PINT API-----------------

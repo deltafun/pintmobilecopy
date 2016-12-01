@@ -26,7 +26,7 @@ public class DefaultTokenProvider implements ITokenProvider {
     public RequestQueue requestQueue;
 
     public DefaultTokenProvider(Context context) {
-    //    requestQueue = Volley.newRequestQueue(context);
+        requestQueue = Volley.newRequestQueue(context);
     }
 
     @Override

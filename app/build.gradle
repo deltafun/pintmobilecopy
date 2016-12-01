@@ -47,6 +47,8 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.android.volley:volley:1.0.0' // won't compile otherwise
     testCompile "org.mockito:mockito-core:1.+"
+    testCompile 'org.awaitility:awaitility:2.0.0'
+    // robolectric
     testCompile "org.robolectric:robolectric:3.1.4"
     testCompile 'org.robolectric:shadows-support-v4:3.0'
     testCompile 'org.robolectric:shadows-httpclient:3.0'
